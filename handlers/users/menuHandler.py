@@ -14,7 +14,7 @@ async def handleAboutRegion(message: types.Message):
 
 @dp.message_handler(text="🏛 Раҳбарият")
 async def handleMenu(message: types.Message):
-  await message.answer(text="tanlang", reply_markup=mainKey)
+  await message.answer(text="Қуйидаги тугмалардан бирини танланг", reply_markup=mainKey)
 
 @dp.message_handler(text = "🏘 МФЙлар ҳақида")
 async def handleMenu(message: types.Message):

@@ -11,6 +11,7 @@ from loader import db
 async def on_startup(dispatcher):
   await set_default_commands(dispatcher)
   await on_startup_notify(dispatcher)
+  await db.__init__(db)
   await db.connect(db)
   await print(111111111111111111111111111111111111111111111)
 

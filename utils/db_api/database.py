@@ -50,6 +50,7 @@ class DatabaseManager:
 
 
     async def check_user_exists(self, telegram_id):
+        print(self.connection)
         query = "SELECT COUNT(*) FROM users WHERE id = $1"
-        result = await self.connection.fetchval(query, telegram_id)
-        return result == 1
+        # result = await self.connection.fetchval(query, telegram_id)
+        # return result == 1

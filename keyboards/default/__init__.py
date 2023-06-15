@@ -4,3 +4,4 @@ from . import phoneShare
 from . import cancelContact
 from . import regionKeys
 from . import rahbariyatKeys
+from . import adminKeys

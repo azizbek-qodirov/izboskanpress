@@ -4,3 +4,4 @@ from . import contactAdminKey
 from . import auksionKeys
 from . import turismKeys
 from . import backTurismKeys
+from . import registrationKey

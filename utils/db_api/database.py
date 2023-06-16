@@ -6,7 +6,6 @@ class DatabaseManager:
     def __init__(self) -> None:
         self.connection = None
     async def connect(self):
-        await print(111127827677777777777777)
         try:
             self.connection = await asyncpg.connect(dsn=f"postgresql://{USER}:{DBPASSWORD}@{HOST}:{PORT}/{DBNAME}")
             await print('Succesfully connected to the database pgsql!')

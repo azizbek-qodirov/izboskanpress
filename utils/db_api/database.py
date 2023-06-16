@@ -8,9 +8,9 @@ class DatabaseManager:
     async def connect(self):
         try:
             self.connection = await asyncpg.connect(dsn=f"postgresql://{USER}:{DBPASSWORD}@{HOST}:{PORT}/{DBNAME}")
-            await print('Succesfully connected to the database pgsql!')
+            print('Succesfully connected to the database pgsql!')
         except Exception as e:  
-            await print('Something went wrong while connecting pgsql: ', e)
+            print('Something went wrong while connecting pgsql: ', e)
     async def disconnect(self):
         await self.connection.close()
 

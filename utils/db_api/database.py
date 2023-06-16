@@ -5,6 +5,7 @@ import datetime
 class DatabaseManager:
     def __init__(self) -> None:
         self.connection = None
+
     async def connect(self):
         try:
             self.connection = await asyncpg.connect(dsn=f"postgresql://{USER}:{DBPASSWORD}@{HOST}:{PORT}/{DBNAME}")
@@ -41,16 +42,13 @@ class DatabaseManager:
         query = "SELECT count(*) FROM users WHERE joined_date = $1"
         return await self.connection.fetchval(query, today)
     
-
     async def count_this_month_joined_users(self):
         today = datetime.date.today()
         start_of_month = datetime.date(today.year, today.month, 1)
         query = "SELECT count(*) FROM users WHERE joined_date >= $1"
         return await self.connection.fetchval(query, start_of_month)
 
-
     async def check_user_exists(self, telegram_id):
-        print(self.connection)
         query = "SELECT COUNT(*) FROM users WHERE id = $1"
-        # result = await self.connection.fetchval(query, telegram_id)
-        # return result == 1
+        result = await self.connection.fetchval(query, telegram_id)
+        return result == 1

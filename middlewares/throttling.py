@@ -34,4 +34,4 @@ class ThrottlingMiddleware(BaseMiddleware):
 
     async def message_throttled(self, message: types.Message, throttled: Throttled):
         if throttled.exceeded_count <= 2:
-            await message.reply("Жуда жўп мурожаатлар!!!")
+            await message.reply("Жуда кўп мурожаатлар!!!")

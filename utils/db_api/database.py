@@ -3,7 +3,7 @@ from data.config import USER, DBPASSWORD, DBNAME, HOST, PORT
 import datetime
 
 class DatabaseManager:
-    def __init__(self) -> None:
+    def __init__(self):
         self.connection = None
 
     async def connect(self):
